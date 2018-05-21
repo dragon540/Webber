@@ -16,15 +16,21 @@ SOURCES += main.cpp\
         firstwindow.cpp \
     newprojectwindow.cpp \
     browsewindow.cpp \
-    non-ui-src/filefolder.cpp
+    non-ui-src/filefolder.cpp \
+    editor/editorwindow.cpp
 
 HEADERS  += firstwindow.h \
     newprojectwindow.h \
     browsewindow.h \
-    non-ui-src/filefolder.h
+    non-ui-src/filefolder.h \
+    editor/editorwindow.h
 
 FORMS    += firstwindow.ui \
     newprojectwindow.ui \
-    browsewindow.ui
+    browsewindow.ui \
+    editor/editorwindow.ui
 
 DISTFILES +=
+
+RESOURCES += \
+    icons.qrc
