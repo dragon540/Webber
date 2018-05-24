@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "editor/editorwindow.h"
+
 namespace Ui {
 class NewProjectWindow;
 }
@@ -20,6 +22,7 @@ private slots:
 
 private:
     Ui::NewProjectWindow *ui;
+    EditorWindow *ew;
 };
 
 #endif // NEWPROJECTWINDOW_H

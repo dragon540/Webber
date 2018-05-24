@@ -31,3 +31,16 @@ void filefolder::writeToFile(std::string path, std::string content)
     file << content << '\n';
     file.close();
 }
+
+std::string filefolder::readFile(std::string path)
+{
+    std::ifstream file;
+    std::string content,fcontent;
+    file.open(path.c_str());
+
+    while(std::getline(file,content)) {
+        fcontent.append(content);
+    }
+    file.close();
+    return fcontent;
+}

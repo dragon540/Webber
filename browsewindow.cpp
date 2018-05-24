@@ -5,14 +5,18 @@
 
 #include <QFileSystemModel>
 #include <QModelIndexList>
+#include <QString>
+#include <QFileDialog>
 
 BrowseWindow::BrowseWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::BrowseWindow)
 {
     ui->setupUi(this);
+    filefolder ff;
+//todo complete it
 
-    QString path = "/home/shobhit/";
+    /*QString path = "/home/shobhit/";
 
     qfs = new QFileSystemModel(this);
 
@@ -22,7 +26,11 @@ BrowseWindow::BrowseWindow(QWidget *parent) :
     // hides non-name column
     ui->treeView->hideColumn(1);
     ui->treeView->hideColumn(2);
-    ui->treeView->hideColumn(3);
+    ui->treeView->hideColumn(3);*/
+
+    //QString file = QFileDialog::getOpenFileName(this,"select your project", "/home");
+    //std::string pathToFile = file.toStdString();
+    //ff.newFolder(pathToFile.c_str());
 
 }
 
@@ -34,11 +42,11 @@ BrowseWindow::~BrowseWindow()
 // when project folder is selected by user
 void BrowseWindow::on_pushButton_clicked()
 {
-    QModelIndex list = ui->treeView->currentIndex();
-    QString pathToSelectedItem = qfs->filePath(list);
+    //QModelIndex list = ui->treeView->currentIndex();
+    //QString pathToSelectedItem = qfs->filePath(list);
 
-    filefolder fil;
-    fil.writeToFile("/home/shobhit/Desktop/PROJECTPATH.txt", pathToSelectedItem.toStdString());
+    //filefolder fil;
+    //fil.writeToFile("/home/shobhit/Desktop/PROJECTPATH.txt", pathToSelectedItem.toStdString());
 
     this->close();
 }

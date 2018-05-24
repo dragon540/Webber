@@ -10,6 +10,8 @@ public:
     void newFile(std::string path);
 
     void writeToFile(std::string path, std::string content);
+
+    std::string readFile(std::string path);
 };
 
 #endif // FILEFOLDER_H

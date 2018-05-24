@@ -19,8 +19,11 @@ void NewProjectWindow::on_pushButton_clicked()
 {
     filefolder fil;
 
+    ew = new EditorWindow(this);
+
     fil.newFolder(ui->lineEdit->text().toStdString());
     fil.writeToFile("/home/shobhit/Desktop/PROJECTPATH.txt", ui->lineEdit->text().toStdString());
 
     this->close();
+    ew->show();
 }

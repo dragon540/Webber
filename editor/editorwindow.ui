@@ -17,10 +17,10 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>30</y>
-      <width>411</width>
-      <height>341</height>
+      <x>190</x>
+      <y>60</y>
+      <width>256</width>
+      <height>192</height>
      </rect>
     </property>
    </widget>
@@ -39,6 +39,8 @@
      <string>File</string>
     </property>
     <addaction name="actionNew"/>
+    <addaction name="actionOpen_Existing"/>
+    <addaction name="separator"/>
     <addaction name="actionSave"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -59,9 +61,15 @@
     <addaction name="actionHTML"/>
     <addaction name="actionHumane"/>
    </widget>
+   <widget class="QMenu" name="menuProject_tree">
+    <property name="title">
+     <string>Project tree</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
+   <addaction name="menuProject_tree"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -138,6 +146,11 @@
   <action name="actionUndo">
    <property name="text">
     <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionOpen_Existing">
+   <property name="text">
+    <string>Open Existing</string>
    </property>
   </action>
  </widget>
