@@ -69,12 +69,15 @@ void EditorWindow::on_actionNew_triggered()
     QString path = path.fromStdString(tpath);
 
     path.append("/");
+
+    // it is currently saving file to .txt file
+    // because qstring path appends lineedit before user enters file name
     path.append(nf->pathReturner());
     path.append(".txt");
 
     //for testing
-    std::string p = "/home/shobhit/Desktop/qtfile.txt";
-    ff.writeToFile(p,path.toStdString());
+    //std::string p = "/home/shobhit/Desktop/qtfile.txt";
+    //ff.writeToFile(p,path.toStdString());
 
     EditorWindow::openExisting(path.toStdString());
 }
