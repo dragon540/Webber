@@ -17,18 +17,21 @@ SOURCES += main.cpp\
     newprojectwindow.cpp \
     browsewindow.cpp \
     non-ui-src/filefolder.cpp \
-    editor/editorwindow.cpp
+    editor/editorwindow.cpp \
+    editor/newfile.cpp
 
 HEADERS  += firstwindow.h \
     newprojectwindow.h \
     browsewindow.h \
     non-ui-src/filefolder.h \
-    editor/editorwindow.h
+    editor/editorwindow.h \
+    editor/newfile.h
 
 FORMS    += firstwindow.ui \
     newprojectwindow.ui \
     browsewindow.ui \
-    editor/editorwindow.ui
+    editor/editorwindow.ui \
+    editor/newfile.ui
 
 DISTFILES +=
 

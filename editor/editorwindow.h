@@ -1,6 +1,8 @@
 #ifndef EDITORWINDOW_H
 #define EDITORWINDOW_H
 
+#include "editor/newfile.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -32,8 +34,13 @@ private slots:
 
     void on_actionOpen_Existing_triggered();
 
+    void openExisting();
+    void openExisting(std::string path);
+
 private:
     Ui::EditorWindow *ui;
+    Newfile *nf;
+    QString filename;
 };
 
 #endif // EDITORWINDOW_H
