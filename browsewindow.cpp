@@ -24,6 +24,7 @@ BrowseWindow::BrowseWindow(QWidget *parent) :
     ui->treeView->setModel(qfs);
 
     // hides non-name column
+    s
     ui->treeView->hideColumn(1);
     ui->treeView->hideColumn(2);
     ui->treeView->hideColumn(3);*/
