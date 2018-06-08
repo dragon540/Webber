@@ -27,6 +27,8 @@ void Newfile::on_pushButton_clicked()
     std::string projectPath = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
     ff.newFile(projectPath + "/" + ui->lineEdit->text().toStdString() + ".txt");
 
+    emit pathEmit(ui->lineEdit->text());
+
     this->close();
 }
 

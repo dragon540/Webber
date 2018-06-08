@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+signals:
+    QString pathEmit(QString);
 private:
     Ui::Newfile *ui;
     QString filepath;

@@ -59,27 +59,14 @@ void EditorWindow::on_actionOpen_Existing_triggered()
 
 void EditorWindow::on_actionNew_triggered()
 {
-    filefolder ff;
     nf = new Newfile(this);
-
     nf->show();
 
-    std::string tpath = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
-
-    QString path = path.fromStdString(tpath);
-
-    path.append("/");
+    connect(nf,SIGNAL(pathEmit(QString)),this,SLOT(setName(QString)));
 
     // it is currently saving file to .txt file
     // because qstring path appends lineedit before user enters file name
-    path.append(nf->pathReturner());
-    path.append(".txt");
-
-    //for testing
-    //std::string p = "/home/shobhit/Desktop/qtfile.txt";
-    //ff.writeToFile(p,path.toStdString());
-
-    EditorWindow::openExisting(path.toStdString());
+    // path.append(nf->pathReturner())
 }
 
 void EditorWindow::on_actionSave_triggered()
@@ -139,4 +126,22 @@ void EditorWindow::openExisting(std::string pathToExistingFile)
             ui->textEdit->setPlainText(text);
         }
      }
+}
+
+void EditorWindow::openNew(QString filepath)
+{
+    EditorWindow::openExisting(filepath.toStdString());
+
+}
+
+void EditorWindow::setName(QString text)
+{
+
+    filefolder ff;
+    std::string tpath = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
+    QString path = path.fromStdString(tpath);
+    path.append("/");
+    path.append(text);
+    path.append(".txt");
+    EditorWindow::openExisting(path.toStdString());
 }
