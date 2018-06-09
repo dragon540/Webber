@@ -32,7 +32,3 @@ void Newfile::on_pushButton_clicked()
     this->close();
 }
 
-QString Newfile::pathReturner()
-{
-    return ui->lineEdit->text();
-}

@@ -33,7 +33,10 @@ FORMS    += firstwindow.ui \
     editor/editorwindow.ui \
     editor/newfile.ui
 
-DISTFILES +=
+DISTFILES += \
+    HTML-templates/NewPage.txt \
+    HTML-templates/NewBody.txt \
+    HTML-templates/NewPara.txt
 
 RESOURCES += \
     icons.qrc

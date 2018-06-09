@@ -15,9 +15,6 @@ public:
     explicit Newfile(QWidget *parent = 0);
     ~Newfile();
 
-    QString path;
-    QString pathReturner();
-
 private slots:
     void on_pushButton_2_clicked();
 

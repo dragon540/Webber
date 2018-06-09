@@ -37,14 +37,11 @@ private slots:
     void openExisting();
     void openExisting(std::string path);
 
-    void openNew(QString filepath);
-
-    void setName(QString text);
+    void openFile(QString text);
 private:
     Ui::EditorWindow *ui;
     Newfile *nf;
     QString filename;
-    QString file;
 };
 
 #endif // EDITORWINDOW_H

@@ -62,7 +62,7 @@ void EditorWindow::on_actionNew_triggered()
     nf = new Newfile(this);
     nf->show();
 
-    connect(nf,SIGNAL(pathEmit(QString)),this,SLOT(setName(QString)));
+    connect(nf,SIGNAL(pathEmit(QString)),this,SLOT(openFile(QString)));
 
     // it is currently saving file to .txt file
     // because qstring path appends lineedit before user enters file name
@@ -127,14 +127,9 @@ void EditorWindow::openExisting(std::string pathToExistingFile)
         }
      }
 }
+// end of overloaded function
 
-void EditorWindow::openNew(QString filepath)
-{
-    EditorWindow::openExisting(filepath.toStdString());
-
-}
-
-void EditorWindow::setName(QString text)
+void EditorWindow::openFile(QString text)
 {
 
     filefolder ff;
