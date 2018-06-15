@@ -1,0 +1,8 @@
+firstwindow is the first window which open when the webber program is executed.
+
+it has two options-
+1 - new project
+2 - browse existing projects
+
+when 1 is selected a new dialog (newprojectwindow) appears in which user can set path to the project.
+when 2 is selceted a new filedialog (browsewindow) is opened (some work are pending)

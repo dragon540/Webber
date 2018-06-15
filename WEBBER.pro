@@ -34,9 +34,11 @@ FORMS    += firstwindow.ui \
     editor/newfile.ui
 
 DISTFILES += \
-    HTML-templates/NewPage.txt \
     HTML-templates/NewBody.txt \
-    HTML-templates/NewPara.txt
+    HTML-templates/NewPara.txt \
+    documentation/firstWindow \
+    documentation/non-ui-src \
+    documentation/editor
 
 RESOURCES += \
     icons.qrc

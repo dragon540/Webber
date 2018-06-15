@@ -1,0 +1,13 @@
+WEBBER/editor
+
+this directory contains files related to wysiwyg editor
+
+it has 1- editorwindow.cpp and editorwindow.h
+and    2- newfile.cpp and newfile.h
+
+1 contains functions related to the editor directly like copy,paste,save,etc
+
+2 contains functions related to newfile.ui
+
+newfile.ui window is called when a New action is invoked from the editor and it takes filename , then the name of file is returned to editor
+which makes new file using it.

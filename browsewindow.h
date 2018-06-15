@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QFileSystemModel>
 
+#include "editor/editorwindow.h"
+
 namespace Ui {
 class BrowseWindow;
 }
@@ -22,6 +24,7 @@ private slots:
 private:
     Ui::BrowseWindow *ui;
     QFileSystemModel *qfs;
+    EditorWindow *ew;
 };
 
 #endif // BROWSEWINDOW_H

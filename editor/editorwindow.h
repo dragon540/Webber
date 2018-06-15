@@ -17,6 +17,10 @@ public:
     explicit EditorWindow(QWidget *parent = 0);
     ~EditorWindow();
 
+    // made public as it is also used by external modules
+    void openExisting();
+    void openExisting(std::string path);
+
 private slots:
     void on_actionCut_triggered();
 
@@ -33,9 +37,6 @@ private slots:
     void on_actionNew_triggered();
 
     void on_actionOpen_Existing_triggered();
-
-    void openExisting();
-    void openExisting(std::string path);
 
     void openFile(QString text);
 private:

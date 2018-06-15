@@ -44,3 +44,9 @@ std::string filefolder::readFile(std::string path)
     file.close();
     return fcontent;
 }
+
+void filefolder::copyFileToAnotherFile(std::string c_file, std::string p_file)
+{
+    std::string contentOfc_file = filefolder::readFile(c_file);
+    filefolder::writeToFile(p_file, contentOfc_file);
+}

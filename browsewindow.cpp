@@ -3,6 +3,8 @@
 
 #include "non-ui-src/filefolder.h"
 
+#include "editor/editorwindow.h"
+
 #include <QFileSystemModel>
 #include <QModelIndexList>
 #include <QString>
@@ -13,10 +15,9 @@ BrowseWindow::BrowseWindow(QWidget *parent) :
     ui(new Ui::BrowseWindow)
 {
     ui->setupUi(this);
-    filefolder ff;
 //todo complete it
 
-    /*QString path = "/home/shobhit/";
+    QString path = "/home/shobhit";
 
     qfs = new QFileSystemModel(this);
 
@@ -24,10 +25,9 @@ BrowseWindow::BrowseWindow(QWidget *parent) :
     ui->treeView->setModel(qfs);
 
     // hides non-name column
-
     ui->treeView->hideColumn(1);
     ui->treeView->hideColumn(2);
-    ui->treeView->hideColumn(3);*/
+    ui->treeView->hideColumn(3);
 
     //QString file = QFileDialog::getOpenFileName(this,"select your project", "/home");
     //std::string pathToFile = file.toStdString();
@@ -43,11 +43,14 @@ BrowseWindow::~BrowseWindow()
 // when project folder is selected by user
 void BrowseWindow::on_pushButton_clicked()
 {
-    //QModelIndex list = ui->treeView->currentIndex();
-    //QString pathToSelectedItem = qfs->filePath(list);
+    EditorWindow *ew = new EditorWindow(this);
 
-    //filefolder fil;
-    //fil.writeToFile("/home/shobhit/Desktop/PROJECTPATH.txt", pathToSelectedItem.toStdString());
+    QModelIndex list = ui->treeView->currentIndex();
+
+    QString pathToSelectedItem = qfs->filePath(list);
+
+    ew->show();
+    ew->openExisting(pathToSelectedItem.toStdString());
 
     this->close();
 }

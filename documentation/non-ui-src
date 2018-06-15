@@ -1,11 +1,13 @@
-#ifndef FILEFOLDER_H
-#define FILEFOLDER_H
+WEBBER/non-ui-src
 
-#include <string>
+non-ui-src directory contains files which usually don't have any direct connection with ui of the project.
 
-class filefolder
-{
-public:
+it currently has filefolder.h and filefolder.cpp file
+WEBBER/non-ui-src/filefolder.h
+WEBBER/non-ui-src/filefolder.cpp
+
+filefolder.h
+
     bool newFolder(std::string path);
     void newFile(std::string path);
 
@@ -16,6 +18,3 @@ public:
     // this function is to copy html from template to main html file
     // c_file is the path of template(usually) and p_file is path to main html file(usually)
     void copyFileToAnotherFile(std::string c_file, std::string p_file);
-};
-
-#endif // FILEFOLDER_H
