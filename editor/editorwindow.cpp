@@ -2,6 +2,7 @@
 #include "ui_editorwindow.h"
 
 #include "non-ui-src/filefolder.h"
+#include "non-ui-src/impfile_path.h"
 #include "editor/newfile.h"
 
 #include <QString>
@@ -63,10 +64,6 @@ void EditorWindow::on_actionNew_triggered()
     nf->show();
 
     connect(nf,SIGNAL(pathEmit(QString)),this,SLOT(openFile(QString)));
-
-    // it is currently saving file to .txt file
-    // because qstring path appends lineedit before user enters file name
-    // path.append(nf->pathReturner())
 }
 
 void EditorWindow::on_actionSave_triggered()
@@ -88,8 +85,9 @@ void EditorWindow::on_actionSave_triggered()
 void EditorWindow::openExisting()
 {
     filefolder ff;
-    // change static path of PROJECTPATH once project is completed
-    std::string path = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
+    impFile_path ip;
+
+    std::string path = ff.readFile(ip.impPath() + "/PROJECTPATH.txt");
     QString file = QFileDialog::getOpenFileName(this, "select a folder" , path.c_str() );
 
     if(!file.isEmpty()) {
@@ -133,7 +131,9 @@ void EditorWindow::openFile(QString text)
 {
 
     filefolder ff;
-    std::string tpath = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
+    impFile_path ip;
+
+    std::string tpath = ff.readFile(ip.impPath() + "/PROJECTPATH.txt");
     QString path = path.fromStdString(tpath);
     path.append("/");
     path.append(text);

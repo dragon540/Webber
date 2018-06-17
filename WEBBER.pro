@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     browsewindow.cpp \
     non-ui-src/filefolder.cpp \
     editor/editorwindow.cpp \
-    editor/newfile.cpp
+    editor/newfile.cpp \
+    non-ui-src/impfile_path.cpp
 
 HEADERS  += firstwindow.h \
     newprojectwindow.h \
     browsewindow.h \
     non-ui-src/filefolder.h \
     editor/editorwindow.h \
-    editor/newfile.h
+    editor/newfile.h \
+    non-ui-src/impfile_path.h
 
 FORMS    += firstwindow.ui \
     newprojectwindow.ui \

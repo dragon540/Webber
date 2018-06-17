@@ -2,6 +2,7 @@
 #include "ui_newfile.h"
 
 #include "non-ui-src/filefolder.h"
+#include "non-ui-src/impfile_path.h"
 
 Newfile::Newfile(QWidget *parent) :
     QDialog(parent),
@@ -23,8 +24,9 @@ void Newfile::on_pushButton_2_clicked()
 void Newfile::on_pushButton_clicked()
 {
     filefolder ff;
+    impFile_path ip;
 
-    std::string projectPath = ff.readFile("/home/shobhit/Desktop/PROJECTPATH.txt");
+    std::string projectPath = ff.readFile(ip.impPath() + "/PROJECTPATH.txt");
     ff.newFile(projectPath + "/" + ui->lineEdit->text().toStdString() + ".txt");
 
     emit pathEmit(ui->lineEdit->text());

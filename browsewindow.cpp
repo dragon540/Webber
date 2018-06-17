@@ -2,6 +2,7 @@
 #include "ui_browsewindow.h"
 
 #include "non-ui-src/filefolder.h"
+#include "non-ui-src/impfile_path.h"
 
 #include "editor/editorwindow.h"
 
@@ -14,13 +15,13 @@ BrowseWindow::BrowseWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::BrowseWindow)
 {
+    impFile_path ip;
     ui->setupUi(this);
 //todo complete it
 
-    QString path = "/home/shobhit";
-
     qfs = new QFileSystemModel(this);
 
+    QString path = path.fromStdString(ip.impPath());
     qfs->setRootPath(path);
     ui->treeView->setModel(qfs);
 

@@ -4,8 +4,6 @@
 #include "newprojectwindow.h"
 #include "browsewindow.h"
 
-#include <stdio.h>
-
 FirstWindow::FirstWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FirstWindow)
