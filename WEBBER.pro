@@ -31,7 +31,6 @@ HEADERS  += firstwindow.h \
 
 FORMS    += firstwindow.ui \
     newprojectwindow.ui \
-    browsewindow.ui \
     editor/editorwindow.ui \
     editor/newfile.ui
 
