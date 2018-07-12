@@ -19,6 +19,12 @@ EditorWindow::EditorWindow(QWidget *parent) :
     this->setCentralWidget(ui->textEdit);
     this->setAcceptDrops(true);
 
+    ui->textSize->addItem("9");
+    ui->textSize->addItem("18");
+    ui->textSize->addItem("36");
+    ui->textSize->addItem("42");
+    ui->textSize->addItem("48");
+
 }
 
 EditorWindow::~EditorWindow()
@@ -100,7 +106,7 @@ void EditorWindow::openExisting()
 
             sfile.close();
 
-            ui->textEdit->setPlainText(text);
+            EditorWindow::setEditor_config(text);
         }
     }
 }
@@ -121,7 +127,7 @@ void EditorWindow::openExisting(std::string pathToExistingFile)
 
             sfile.close();
 
-            ui->textEdit->setPlainText(text);
+            EditorWindow::setEditor_config(text);
         }
      }
 }
@@ -139,4 +145,26 @@ void EditorWindow::openFile(QString text)
     path.append(text);
     path.append(".txt");
     EditorWindow::openExisting(path.toStdString());
+}
+
+void EditorWindow::setEditor_config(QString text)
+{
+    QFont font;
+    font.setFamily(QStringLiteral("Nyala"));
+    font.setPointSize(24);
+    font.setBold(true);
+    font.setItalic(false);
+    font.setWeight(50);
+    ui->textEdit->setText(text);
+    ui->textEdit->setFont(font);
+}
+
+void EditorWindow::on_textSize_currentIndexChanged(int index)
+{
+    QString txt = ui->textSize->currentText();
+
+    // add appropriate symbol to the file modified
+    // call setEditor_config function
+    // also modify setEdito_config to interprete size , styles,etc.
+
 }
