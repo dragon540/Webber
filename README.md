@@ -1,7 +1,7 @@
-# Webber
- **A WYSIWYG editor (UNDER DEVELOPMENT)**
+# Texter
+ **A text editor (UNDER DEVELOPMENT)**
  
-Webber is a software which will help to create websites by automatically generating html code for some predefined action.
+Webber is a text editor originally made as a wysiwyg editor but is now just a text editor
 
 ![alt text](https://github.com/dragon540/Webber/blob/master/documentation/WEBBER.png)
 
