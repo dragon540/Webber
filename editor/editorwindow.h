@@ -39,6 +39,8 @@ private slots:
     void on_actionOpen_Existing_triggered();
 
     void openFile(QString text);
+
+    void setEditor_config(QString text);
 private:
     Ui::EditorWindow *ui;
     Newfile *nf;
